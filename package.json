@@ -1,0 +1,32 @@
+{
+  "name": "product-management-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "npx ng serve --host 0.0.0.0 --port 4200",
+    "start:local": "npx ng serve --host 0.0.0.0 --port 4200 --proxy-config proxy.conf.json",
+    "start:prod": "npx ng serve --configuration production",
+    "start:staging": "npx ng serve --configuration staging --host 0.0.0.0 --port 4200 --proxy-config proxy.conf.json",
+    "build": "npx ng build --project=frontend",
+    "build:prod": "npx ng build --configuration production --project=frontend",
+    "build:staging": "npx ng build --configuration staging --project=frontend"
+  },
+  "dependencies": {
+    "@angular/animations": "^19.0.0",
+    "@angular/common": "^19.0.0",
+    "@angular/core": "^19.0.0",
+    "@angular/platform-browser": "^19.0.0",
+    "@angular/platform-browser-dynamic": "^19.0.0",
+    "@angular/forms": "^19.0.0",
+    "rxjs": "^7.8.0",
+    "zone.js": "^0.15.0",
+    "tslib": "^2.6.0",
+    "bootstrap": "^5.3.2"
+  },
+  "devDependencies": {
+    "@angular/cli": "^19.0.0",
+    "@angular/compiler-cli": "^19.0.0",
+    "@angular-devkit/build-angular": "^19.0.0",
+    "typescript": "~5.8.0"
+  }
+}

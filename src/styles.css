@@ -1,0 +1,39 @@
+/* Global styles for Product Management frontend */
+:root{
+  --bg:#f8fafc;
+  --card-bg:#ffffff;
+  --muted:#6c757d;
+}
+html,body{height:100%;}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  margin:0;
+  color:#212529;
+  -webkit-font-smoothing:antialiased;
+}
+main{padding:24px 16px;}
+
+/* Card utility */
+.card{background:var(--card-bg);border-radius:8px;border:1px solid rgba(0,0,0,0.04);}
+
+/* Tables */
+.table td, .table th{vertical-align:middle}
+
+/* Form tweaks */
+.form-label{font-weight:600}
+
+/* Small helpers */
+.text-muted{color:var(--muted)!important}
+
+/* Responsive container for the app */
+.container{max-width:1100px}
+
+/* Buttons spacing */
+.btn + .btn{margin-left:8px}
+
+/* Header */
+h1{font-size:1.6rem;margin-bottom:0.5rem}
+
+/* Simple footer */
+.app-footer{padding:12px;text-align:center;color:var(--muted);font-size:0.9rem}

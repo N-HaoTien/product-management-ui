@@ -1,0 +1,40 @@
+.container { max-width: 1100px; }
+
+/* Make the modal appear above other content when using CSS-only approach */
+.modal { z-index: 1050; }
+.modal-backdrop { z-index: 1040; }
+
+/* CSS-only modal behavior (basic Bootstrap-like layout) */
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: block; /* controlled by [style.display] in template */
+	overflow: auto;
+	padding: 1.5rem; /* spacing around dialog on small screens */
+}
+
+.modal-dialog {
+	margin: 0 auto;
+	max-width: 1140px;
+}
+
+/* Make modal content vertically constrained and scroll modal body if necessary */
+.modal-content {
+	max-height: calc(100vh - 120px);
+	display: flex;
+	flex-direction: column;
+}
+
+.modal-body-scrollable {
+	overflow: auto;
+	/* allow modal header/footer to remain visible */
+	padding: 1rem;
+}
+
+@media (max-width: 576px) {
+	.modal-dialog { max-width: 100%; }
+	.modal-content { max-height: calc(100vh - 80px); }
+}

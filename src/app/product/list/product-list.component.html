@@ -1,0 +1,57 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Products</h2>
+    <button class="btn btn-success" (click)="startCreate()">+ New Product</button>
+  </div>
+
+  <!-- Modal (Bootstrap markup) -->
+  <div class="modal fade" tabindex="-1" [class.show]="showModal" [style.display]="showModal ? 'block' : 'none'">
+    <!-- use modal-xl for more room on desktop, but CSS below keeps it responsive on small screens -->
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{ editing?.id ? 'Edit product' : 'Add product' }}</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="onCancel()"></button>
+        </div>
+        <div class="modal-body modal-body-scrollable">
+          <product-form [model]="editing" (save)="onSave($event)" (cancel)="onCancel()"></product-form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="text-center py-4">
+    <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+  </div>
+
+  <!-- backdrop when modal is open -->
+  <div class="modal-backdrop fade show" *ngIf="showModal"></div>
+
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+  <div *ngIf="!loading" class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{product.id}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.price | currency}}</td>
+          <td>{{product.description}}</td>
+          <td class="text-end">
+            <button class="btn btn-sm btn-outline-primary me-2" (click)="edit(product)">Edit</button>
+            <button class="btn btn-sm btn-outline-danger" (click)="confirmDelete(product.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

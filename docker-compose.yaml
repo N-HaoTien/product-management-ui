@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  product-management-ui:
+    container_name: product-management-ui
+    build:
+      context: .
+    ports:
+      - "8082:80"
+    networks:
+      - app-network
+    hostname: product-management-ui
+
+networks:
+  app-network:
+    driver: bridge

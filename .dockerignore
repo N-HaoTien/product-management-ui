@@ -1,0 +1,31 @@
+# Node modules (reinstalled inside Docker)
+node_modules/
+
+# Angular cache & build
+.angular/
+dist/
+dist-ssr/
+out-tsc/
+
+# Git folder
+.git/
+.gitignore
+
+# IDE files
+.vscode/
+.idea/
+
+# OS / temp files
+.DS_Store
+Thumbs.db
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Docker files
+docker-compose.yml
+Dockerfile
+dockerfile
+
+# Env (will be overwritten inside Docker)
+src/environments/environment*.ts

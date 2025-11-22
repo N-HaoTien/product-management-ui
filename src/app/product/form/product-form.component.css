@@ -1,0 +1,14 @@
+
+/* Styles for the product form */
+.card { background: #fff; border: 1px solid rgba(0,0,0,0.05); }
+label.form-label { font-weight: 600; font-size: 0.9rem; }
+.text-danger.small { margin-top: 4px; }
+
+/* Ensure action buttons wrap nicely on small screens and don't overflow the modal */
+.col-md-2.d-flex {
+	flex-wrap: wrap;
+}
+.col-md-2.d-flex .btn {
+	min-width: 5.5rem;
+}
+
